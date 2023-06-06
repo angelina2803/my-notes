@@ -30,12 +30,17 @@ h4 {
 }
 
 /*  notes */
+.containerNotes{
+  margin-top: 50px;
+}
+.containerNotes h2{
+  color:rgb(246, 161, 238);
+}
 .container_post{
   margin-top: 20px;
   display: flex;
   justify-content: center; /* Центрирование по горизонтали */
   align-items: center; /* Центрирование по вертикали */
-  border: 5px solid rgb(54, 139, 111);
 }
 .post-item{
   width: 100%;
@@ -44,4 +49,8 @@ h4 {
 }
 .post_btn{
   border-radius: 3px;
+}
+/* form */
+.formAdd{
+  margin-top: 100px;
 }
