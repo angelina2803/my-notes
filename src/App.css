@@ -61,6 +61,7 @@ h4 {
   transform: translateX(-50%);
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 /* form */

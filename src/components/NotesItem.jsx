@@ -3,9 +3,13 @@ import MyButton from "./ UI/button/MyButton";
 import { AiFillCheckSquare } from "react-icons/ai";
 
 const NotesItem = (props) => {
+
+
  const changeColor = ()=>{
   let doneButton = document.querySelector('.done-icon');
   doneButton.classList.add("change_color_done-icon");
+
+  
  }
   return (
     <div className="container_post">
