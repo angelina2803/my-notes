@@ -3,6 +3,10 @@ import MyButton from "./ UI/button/MyButton";
 import { AiFillCheckSquare } from "react-icons/ai";
 
 const NotesItem = (props) => {
+ const changeColor = ()=>{
+  let doneButton = document.querySelector('.done-icon');
+  doneButton.classList.add("change_color_done-icon");
+ }
   return (
     <div className="container_post">
       <div className="post-item">
@@ -10,7 +14,7 @@ const NotesItem = (props) => {
           <h3>{props.number}. {props.el.title} </h3> 
         </div>
   
-          <button className="done-icon">
+          <button onClick={changeColor} className="done-icon">
             <AiFillCheckSquare/>
             </button>
 
