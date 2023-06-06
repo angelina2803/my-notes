@@ -24,7 +24,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Montserrat", serif;
 }
-
+h2{
+  text-align: center;
+  margin-top: 60px;
+}
 h4 {
 	font-size: 36px;
 }
@@ -52,5 +55,24 @@ h4 {
 }
 /* form */
 .formAdd{
-  margin-top: 100px;
+  margin-top: 40px;
+} 
+/* navigation */
+.nav-links a {
+  color:rgb(246, 161, 238);
+  text-decoration: none;
+  margin: 15px;
+}
+
+li {
+  list-style: none;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  
 }
