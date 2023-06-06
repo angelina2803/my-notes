@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NotesItem from "./components/NotesItem";
 
 function App() {
+  const [posts, setPosts] = useState([
+    {id:1, dateEvent: '28.3.2000', title: 'Going to a restaurant with friends'},
+    {id:2, dateEvent: '28.3.2000', title: 'Going to a restaurant with friends'},
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NotesItem post={} />
     </div>
   );
 }
