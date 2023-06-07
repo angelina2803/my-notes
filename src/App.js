@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import NotesList from "./components/NotesList";
 import "./App.css";
-import Myinput from "./components/ UI/input/Myinput";
-import MyButton from "./components/ UI/button/MyButton";
+import NodeForm from "./components/NodeForm";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -18,39 +17,20 @@ function App() {
     },
   ]);
 
-  const [dateEvent, setdateEvent] = useState();
-  const [title, setTitle] = useState();
+  const createPost = (newPost) =>{
+      setPosts([...posts, newPost])
+  }
+ 
+  const removePost = (el) =>{
+    setPosts(posts.filter(p => p.id !== el.id )) //есди ад с массива равен ад с обьектом кторой мы передали
+  }
 
-  const addNewBook = (e) => {
-    e.preventDefault();
-    const newPost = {
-      id: Date.now(),
-      title,
-      dateEvent,
-    };
-    setPosts([...posts, newPost]);
-    setTitle("");
-    setdateEvent("");
-  };
-
+  
   return (
     <div className="App">
-      <form className="formAdd">
-        <Myinput
-          value={title}
-          onChange={(e) => setTitle(e.target.value)} // для того чтобы отслеживать что вводит пользователь называется двухсторонее свзяывние
-          type="text"
-          placeholder="Write an event"
-        ></Myinput>
-        <Myinput
-          value={dateEvent}
-          onChange={(e) => setdateEvent(e.target.value)}
-          type="text"
-          placeholder="Event date"
-        ></Myinput>
-        <MyButton onClick={addNewBook}>Create</MyButton>
-      </form>
-      <NotesList posts={posts} />
+      <NodeForm create={createPost}/> 
+      {/* функция обратного вызова в пропс вкладываем функцию*/}
+      <NotesList remove={removePost} posts={posts} />
     </div>
   );
 }

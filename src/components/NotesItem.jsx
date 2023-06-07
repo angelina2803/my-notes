@@ -9,7 +9,7 @@ const NotesItem = (props) => {
   let doneButton = document.querySelector('.done-icon');
   doneButton.classList.add("change_color_done-icon");
 
-  
+
  }
   return (
     <div className="container_post">
@@ -26,7 +26,8 @@ const NotesItem = (props) => {
           <p> {props.el.dateEvent}</p>
         </div>
         <div claassName="post_btn">
-          <MyButton>Delete</MyButton>
+          <MyButton onClick={()=> props.remove(props.el)}>
+            Delete</MyButton>
         </div>
       
       </div>
