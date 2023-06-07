@@ -8,12 +8,12 @@ const NodeForm = ({ create }) => {
   const [title, setTitle] = useState();
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const addNewBook = (e) => {
+  const addNewPost = (e) => {
     e.preventDefault();
     const newPost = {
       id: Date.now(),
       title,
-      selectedDate,
+      selectedDate: selectedDate.toISOString(),
     };
     create(newPost);
     setTitle("");
@@ -34,7 +34,7 @@ const NodeForm = ({ create }) => {
         dateFormat="dd/MM/yyyy"
         placeholderText="Select date"
       />
-      <MyButton onClick={addNewBook}>Create</MyButton>
+      <MyButton onClick={addNewPost}>Create</MyButton>
     </form>
   );
 };
