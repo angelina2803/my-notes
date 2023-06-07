@@ -90,3 +90,14 @@ li {
 .change_color_done-icon{
   color: green;
 }
+/* date */
+.myInput_Date{
+  width: 100%;
+  padding: 5px 15px;
+  margin: 5px 0;
+  border: 1px solid rgb(215, 214, 214);
+  background-color: rgb(210, 207, 207);
+  border-radius: 10px;
+  opacity: 0.5;
+  
+}

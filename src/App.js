@@ -7,12 +7,12 @@ function App() {
   const [posts, setPosts] = useState([
     {
       id: 1,
-      dateEvent: "22.5.2023",
+      selectedDate: "28.03.2000",//тут нужно поменять чтобы выводило текст как то с помощью toISOString()
       title: "Going to a restaurant with friends",
     },
     {
       id: 2,
-      dateEvent: "24.3.2023",
+      selectedDate: "28.03.2000",
       title: "Going to a restaurant with friends",
     },
   ]);
@@ -25,7 +25,7 @@ function App() {
     setPosts(posts.filter(p => p.id !== el.id )) //есди ад с массива равен ад с обьектом кторой мы передали
   }
 
-  
+
   return (
     <div className="App">
       <NodeForm create={createPost}/> 
