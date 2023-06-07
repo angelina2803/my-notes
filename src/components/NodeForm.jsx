@@ -24,11 +24,12 @@ const NodeForm = ({ create }) => {
     if (selectedDate) {
       const year = selectedDate.getFullYear();
       const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
-      const day = String(selectedDate.getDay()).padStart(2, "0");
+      const day = String(selectedDate.getDate()).padStart(2, "0");
       return `${day}. ${month}. ${year}`;
     }
     return ""; // Если дата не выбрана, возвращаем пустую строку
   };
+
    
   return (
     <form className="formAdd">
