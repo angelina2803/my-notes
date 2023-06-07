@@ -13,12 +13,23 @@ const NodeForm = ({ create }) => {
     const newPost = {
       id: Date.now(),
       title,
-      selectedDate: selectedDate.toISOString(),
+      selectedDate: formatSelectedDate(selectedDate.toISOString()),
     };
     create(newPost);
     setTitle("");
     setSelectedDate("");
   };
+
+  const formatSelectedDate = () => {
+    if (selectedDate) {
+      const year = selectedDate.getFullYear();
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const day = String(selectedDate.getDay()).padStart(2, "0");
+      return `${day}. ${month}. ${year}`;
+    }
+    return ""; // Если дата не выбрана, возвращаем пустую строку
+  };
+   
   return (
     <form className="formAdd">
       <Myinput
@@ -27,12 +38,13 @@ const NodeForm = ({ create }) => {
         type="text"
         placeholder="Write an event"
       ></Myinput>
-      <DatePicker
+      <DatePicker 
         className="myInput_Date"
         selected={selectedDate}
         onChange={(date) => setSelectedDate(date)}
-        dateFormat="dd/MM/yyyy"
+        dateFormat="dd.MM.yyyy"
         placeholderText="Select date"
+        
       />
       <MyButton onClick={addNewPost}>Create</MyButton>
     </form>
